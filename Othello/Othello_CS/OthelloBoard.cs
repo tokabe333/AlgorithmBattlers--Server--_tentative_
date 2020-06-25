@@ -64,7 +64,7 @@ namespace Othello {
 					if (this.Map[i][j] != 0) continue;
 					bool flag = false;
 					// 8方向について探索していく
-					for (int k = 0; k < this.N; ++k) {
+					for (int k = 0; k < this.Next.Length; ++k) {
 						int cx = j, cy = i;
 						while (true) {
 							cx += this.Next[k].x;
@@ -89,5 +89,14 @@ namespace Othello {
 			return retList;
 		} //End_Method
 
-	} //End_Class
-} //End_Namespace
+		public bool PutStone ((int x, int y) xy, int player) {
+			if ((xy.x < 0) || (this.N <= xy.x) || (xy.y < 0) || (this.N <= xy.y) || (this.Map[xy.x][xy.y] != 0)) {
+				Console.WriteLine ("石を置く場所がガバやで x:" + xy.x + " y:" + xy.y + " player:" + player);
+				return false;
+			} //End_If
+			// 8方向走査
+			for (int k = 0; k < this.Next.Length; ++k) {
+
+			}
+		} //End_Class
+	} //End_Namespace
