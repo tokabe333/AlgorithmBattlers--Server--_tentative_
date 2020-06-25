@@ -1,14 +1,16 @@
 import json
 
+
 def default_method(item):
-	if isinstance(item, object) and hasattr(item, '__dict__'):
-		return item.__dict__
-	else:
-		print(item)
-		raise TypeError
+    if isinstance(item, object) and hasattr(item, '__dict__'):
+        return item.__dict__
+    else:
+        print(item)
+        raise TypeError
+
 
 def DumpJson(obj):
-	return json.dumps(obj, default=default_method, indent=2)	
+    return json.dumps(obj, default=default_method, indent=2)
 
 
 # # --------------いらないこ-------------
@@ -29,7 +31,6 @@ def DumpJson(obj):
 
 # 	def uncicici(self):
 # 		self.unnn = "jfkdal"
-
 
 # def main():
 # 	u = unchi()
