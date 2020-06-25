@@ -11,31 +11,31 @@ def DumpJson(obj):
 	return json.dumps(obj, default=default_method, indent=2)	
 
 
-# --------------いらないこ-------------
+# # --------------いらないこ-------------
 
-class unchi:
-	def __init__(self):
-		self.unpi = "buryuryuryu"
-		self.unpip = 114514
-		self.unpipi = [1,1,4,5,1,4]
-		self.unpipip = [[i * j for i in range(3)] for j in range(2)]
-		#self.pipi = unpiii()
-		print("333")
+# class unchi:
+# 	def __init__(self):
+# 		self.unpi = "buryuryuryu"
+# 		self.unpip = 114514
+# 		self.unpipi = [1,1,4,5,1,4]
+# 		self.unpipip = [[i * j for i in range(3)] for j in range(2)]
+# 		#self.pipi = unpiii()
+# 		print("333")
 
-class unpiii(unchi):
-	def __init__(self):
-		super().__init__()
-		self.unnn = "unnn"
+# class unpiii(unchi):
+# 	def __init__(self):
+# 		super().__init__()
+# 		self.unnn = "unnn"
 
-	def uncicici(self):
-		self.unnn = "jfkdal"
+# 	def uncicici(self):
+# 		self.unnn = "jfkdal"
 
 
-def main():
-	u = unchi()
-	uu = unpiii()
-	uu.uncicici()
-	print(DumpJson(uu))
+# def main():
+# 	u = unchi()
+# 	uu = unpiii()
+# 	uu.uncicici()
+# 	print(DumpJson(uu))
 
-if __name__=="__main__":
-	main()
+# if __name__=="__main__":
+# 	main()
