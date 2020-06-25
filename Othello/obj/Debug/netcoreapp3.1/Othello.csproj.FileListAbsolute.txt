@@ -1,0 +1,13 @@
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\bin\Debug\netcoreapp3.1\Othello.exe
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\bin\Debug\netcoreapp3.1\Othello.deps.json
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\bin\Debug\netcoreapp3.1\Othello.runtimeconfig.json
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\bin\Debug\netcoreapp3.1\Othello.runtimeconfig.dev.json
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\bin\Debug\netcoreapp3.1\Othello.dll
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\bin\Debug\netcoreapp3.1\Othello.pdb
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\obj\Debug\netcoreapp3.1\Othello.csprojAssemblyReference.cache
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\obj\Debug\netcoreapp3.1\Othello.AssemblyInfoInputs.cache
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\obj\Debug\netcoreapp3.1\Othello.AssemblyInfo.cs
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\obj\Debug\netcoreapp3.1\Othello.csproj.CoreCompileInputs.cache
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\obj\Debug\netcoreapp3.1\Othello.dll
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\obj\Debug\netcoreapp3.1\Othello.pdb
+G:\お金儲け\ほっちーなおちんのやつ\AlgorithmBattlers--Server--_tentative_\Othello\obj\Debug\netcoreapp3.1\Othello.genruntimeconfig.cache
