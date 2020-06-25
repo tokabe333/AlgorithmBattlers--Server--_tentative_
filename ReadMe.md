@@ -24,12 +24,12 @@
 - sudo apt-get update
 - sudo apt-get upgrade
 - sudo apt-get install build-essential
-#### VS Code からの実行
-- VS Codeのエクステンションである **Code-Runner** を導入
-- cd \$dir && g++ -std=gnu++17 -O2 \$fileName -o \$fileNameWithoutExt.exe && \$fileNameWithoutExt.exe 
-- ↑ 詳細な設定は[setting.json](./vs-code_setting.json)にあるので F1→Open Setting(JSON)にコピペ
-- .bashrc に gnu++ みたいな名前で alias 登録しておくと便利かも
-- ↑ alias g++ -std=gnu++17 -O2 \$1 -o \$1.bin && $1.bin　みたいな感じになりそう
+	#### VS Code からの実行
+	- VS Codeのエクステンションである **Code-Runner** を導入
+	- cd \$dir && g++ -std=gnu++17 -O2 \$fileName -o \$fileNameWithoutExt.exe && \$fileNameWithoutExt.exe 
+	- ↑ 詳細な設定は[setting.json](./vs-code_setting.json)にあるので F1→Open Setting(JSON)にコピペ
+	- .bashrc に gnu++ みたいな名前で alias 登録しておくと便利かも
+	- ↑ alias g++ -std=gnu++17 -O2 \$1 -o \$1.bin && $1.bin　みたいな感じになりそう
 
 
 ## 備忘録
