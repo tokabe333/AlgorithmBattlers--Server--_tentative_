@@ -1,0 +1,35 @@
+{
+	"editor.mouseWheelZoom": true,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"editor.formatOnType": false,
+	"files.autoSave": "off",
+	"C_Cpp.clang_format_style": "Google",
+	"C_Cpp.clang_format_fallbackStyle": "Google",
+	"[c]": {
+		"files.encoding": "shiftjis"
+	},
+	"[cpp]": {
+		"files.encoding": "shiftjis"
+	},
+	"[python]": {
+		"editor.tabSize": 4,
+		"editor.formatOnSave": false
+	},
+	"code-runner.runInTerminal": true,
+	"code-runner.executorMap": {
+		"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt'.exe'",
+		//"cpp": "cd $dir; g++ -std=gnu++17 -O2 $fileName -o $fileNameWithoutExt.exe; .\\$fileNameWithoutExt.exe",
+		"cpp": "cd $dir & g++ -std=gnu++17 -O2 $fileName -o $fileNameWithoutExt.exe & $fileNameWithoutExt.exe",
+		"python": "python",
+		"ruby": "ruby",
+		"csharp": "dotnet run"
+	},
+	"code-runner.ignoreSelection": true,
+	"explorer.confirmDelete": false,
+	"window.zoomLevel": 0,
+	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+	"editor.codeLens": false
+}
