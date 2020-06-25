@@ -1,12 +1,12 @@
-from abc import *
-
 class GameRule:
 	def __init__(self):
-		self.ngo = "334"
+		self.Board = 114514
+		self.Pojihame = "3333"
+		print("GameRule is inherited")
 		return
 
-	@abstractmethod
 	def init_game(self):
+		print("GameRule is initialized")
 		return 0
 
 	def turn(self):
@@ -14,4 +14,3 @@ class GameRule:
 
 	def calc_scores(self):
 		return 0
-

@@ -1,11 +1,13 @@
-import sys, os
-print(os.getcwd())
-from Util import GameRule as gr
-#import GameRule as gr
+import sys, os, json
+sys.path.append(os.getcwd())
+from Util import GameRule as ugr
+from Util import Json as uj
 
-# class Othello(gr.Gamerule):
-# 	def __init__(self):
-# 		print("334")
+class Othello(ugr.GameRule):
+	def __init__(self):
+		super().__init__()
 
-# ot = othello()
+ot = Othello()
+ot.init_game()
 
+print(uj.DumpJson(ot))
