@@ -1,12 +1,15 @@
 ﻿using System;
 
-namespace Othello
-{
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			Console.WriteLine("Hello World!");
-		}
-	}
-}
+namespace Othello {
+	class Othello {
+
+		/// <summary>
+		/// ボードくん
+		/// </summary>
+		private OthelloBoard Board;
+
+		public Othello () {
+			this.Board = new OthelloBoard ();
+		} //End_Method
+	} //End_Class
+} //End_Namespace

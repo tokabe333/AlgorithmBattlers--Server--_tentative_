@@ -23,6 +23,13 @@
 **windows** → https://dotnet.microsoft.com/download <br>
 **Linux**   → 備忘録を参照
 
+- #### VS Code 拡張機能
+	- C#
+	- C# Extensions
+	- C# FixFormat
+	- C# XML Documentation Comments
+	- Preferences → Setting → editor.codeLens=false
+
 - #### .net core コマンド
 	**※各種コマンドはプロジェクトディレクトリに移動して実行**
 	- **バージョン確認** → dotnet new 
