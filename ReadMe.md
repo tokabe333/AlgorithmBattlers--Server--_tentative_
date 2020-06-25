@@ -20,7 +20,7 @@
 - pipとか使えるようにして
 
 ### C# (.NET Core 3.1)
-**windows** → https://dotnet.microsoft.com/download
+**windows** → https://dotnet.microsoft.com/download <br>
 **Linux**   → 備忘録を参照
 
 - #### .net core コマンド
