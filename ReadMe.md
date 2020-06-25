@@ -10,9 +10,12 @@
 **Linux**   → 備忘録を参照
 
 - #### .net core コマンド
+	**※各種コマンドはプロジェクトディレクトリに移動して実行**
 	- **バージョン確認** → dotnet new 
 	- **プロジェクト作成** → dotnet new [テンプレート名] --name [プロジェクト名] --ouput [出力ディレクトリ]
-
+	- **コンパイル&実行** → dotnet run
+	- **コンパイルのみ** → dotnet build
+	- **コンパイル(リリース)** → dotnet build -c release
 <br><br>
 
 ## 備忘録
