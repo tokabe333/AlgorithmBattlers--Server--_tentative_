@@ -1,14 +1,10 @@
-#include <time.h>
+#include "Othello.h"
 
-#include <cstdint>
-#include <iostream>
-#include <random>
-#include <string>
-#include <vector>
-typedef unsigned long long ull;
-using namespace std;
+void Othello::Show() {
+  this->Show(this->BlackBoard, this->WhiteBoard);
+}  // End_Method
 
-void show(ull black, ull white) {
+void Othello::Show(ull black, ull white) {
   ull counta = 0x8000000000000000;
   for (int i = 1; i <= 64; ++i) {
     if (counta & black) {
@@ -24,9 +20,9 @@ void show(ull black, ull white) {
     }
   }
   // cout << endl;
-}
+}  // End_Method
 
-ull candidate(ull black, ull white, bool turn) {
+ull Othello::Candidate(ull black, ull white, bool turn) {
   ull cand = 0;
   ull player = black * turn + white * (!turn);
   ull opponent = black * (!turn) + white * turn;
@@ -104,9 +100,9 @@ ull candidate(ull black, ull white, bool turn) {
   cand |= (leftup << 9) & ~(player | opponent);
 
   return cand;
-}
+}  // End_Method
 
-void putStone(ull *black, ull *white, bool turn, ull point) {
+void Othello::PutStone(ull *black, ull *white, bool turn, ull point) {
   ull player = *black * turn + *white * (!turn) + point;
   ull opponent = *black * (!turn) + *white * turn;
 
@@ -187,7 +183,17 @@ void putStone(ull *black, ull *white, bool turn, ull point) {
   opponent -= rev;
   *black = player * turn + opponent * (!turn);
   *white = opponent * (turn) + player * (!turn);
-}
+}  // End_Method
+
+int Othello::Count(ull t) {
+  t = (t & 0x5555555555555555) + ((t & 0xAAAAAAAAAAAAAAAA) >> 1);
+  t = (t & 0x3333333333333333) + ((t & 0xCCCCCCCCCCCCCCCC) >> 2);
+  t = (t & 0x0F0F0F0F0F0F0F0F) + ((t & 0xF0F0F0F0F0F0F0F0) >> 4);
+  t = (t & 0x00FF00FF00FF00FF) + ((t & 0xFF00FF00FF00FF00) >> 8);
+  t = (t & 0x0000FFFF0000FFFF) + ((t & 0xFFFF0000FFFF0000) >> 16);
+  t = (t & 0x00000000FFFFFFFF) + ((t & 0xFFFFFFFF00000000) >> 32);
+  return t;
+}  // End_Method
 
 int count(ull t) {
   t = (t & 0x5555555555555555) + ((t & 0xAAAAAAAAAAAAAAAA) >> 1);
@@ -214,71 +220,14 @@ ull Monkey(ull cand) {
     }
     counta <<= 1;
   }
-  return counta;
+  return 0;
 }
 
-int bitCount(ull player) {
-  int size = 64;
-  ull mask = 0x8000000000000000;
-  int count = 0;
-
-  for (int i = 0; i < size; ++i) {
-    if ((mask & player) != 0) count += 1;
-    // cout << "count:" << count << "   mask:" << mask << "  player:" << player
-    // << "  and:" << (mask & player) << endl;
-    mask = mask >> 1;
-  }
-  return count;
-}
-
-// turn:1 êÊéË turn:2 å„éË
 int main() {
-  time_t start, end;
-  double gameTime = 0;
-  for (int i = 0; i < 10; ++i) {
-    ull black = 0x0000000810000000;
-    ull white = 0x0000001008000000;
-    bool turn = 1;
-    ull cand = 0;
-    start = clock();
-    while (1) {
-      // show(black, white);
-      if (!count(cand)) {
-        cand = candidate(black, white, turn);
-        if (!count(cand)) {
-          break;
-        }
-      } else {
-        cand = candidate(black, white, turn);
-        if (!count(cand)) {
-          continue;
-        }
-      }
-      ull point = Monkey(cand);
-      putStone(&black, &white, turn, point);
-      turn = !turn;
-      // cout << "white:" << white << "   black:" << black << endl;
-    }
-    end = clock();
-    gameTime += (end - start);
-
-    int blackScore = bitCount(black);
-    int whiteScore = bitCount(white);
-    // if (turn == 1) {
-    //   int b = blackScore;
-    //   blackScore = whiteScore;
-    //   whiteScore = b;
-    // }
-    show(black, white);
-    string win = whiteScore > blackScore ? "îí" : "çï";
-    cout << (whiteScore == blackScore ? "à¯Ç´ï™ÇØ" : "win:" + win)
-         << "    îí:" << whiteScore << " çï" << blackScore << " çïî’:" << black
-         << " îíî’:" << white << endl
-         << endl;
-  }
-  cout << "time : " << gameTime / 1000 << "ms" << endl;
-  int a;
-  cin >> a;
-  // show(black, white);
+  // Solver solve = Monkey;
+  cout << "fjkdlaf;" << endl;
+  Othello ot([](ull n) { return n * 334; });
+  cout << "jfk;ad" << endl;
+  cout << ot.WhiteSolver(334) << endl;
   return 0;
 }
