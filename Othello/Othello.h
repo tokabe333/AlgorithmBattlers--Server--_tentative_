@@ -2,15 +2,17 @@
 #include "../Util/IGameInterface.h"
 
 // class Othello : public IGame {
-class Othello {
+class Othello : public IGame {
  public:
-  ull WhiteBoard;   // 白の盤面
-  ull BlackBoard;   // 黒の盤面
-  int ElapsedTurn;  // 経過ターン
+  ull WhiteBoard;     // 白の盤面
+  ull BlackBoard;     // 黒の盤面
+  int ElapsedTurn;    // 経過ターン
+  int** BoardData;    // 盤面情報(ソルバーに上げる)
+  int BoardSize = 8;  // 盤面サイズ(今の所8固定)
 
  private:
-  ull (*WhiteSolver)(ull);
-  ull (*BlackSolver)(ull);
+  ull (*WhiteSolver)(ull);  // 白のソルバー
+  ull (*BlackSolver)(ull);  // 黒のソルバー
 
   void Show(ull black, ull white);
 
@@ -32,6 +34,9 @@ class Othello {
 
   // 終了処理
   void EndProcess();
+
+  // ソルバーに渡すデータを作る
+  void TranslateBitToArray();
 
   // static:----------------------------------------
 

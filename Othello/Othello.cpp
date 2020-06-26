@@ -6,7 +6,15 @@ Othello::Othello(ull (*whiteSolver)(ull), ull (*blackSolver)(ull)) {
 
   this->BlackBoard = 0x0000000810000000;
   this->WhiteBoard = 0x0000001008000000;
-}
+
+  this->BoardData = new int*[this->BoardSize];
+  for (int i = 0; i < this->BoardSize; ++i) {
+    this->BoardData[i] = new int[this->BoardSize];
+    for (int j = 0; j < this->BoardSize; ++j) {
+      this->BoardData[i][j] = 0;
+    }  // End_For
+  }    // End_For
+}  // End_Method
 
 void Othello::Show() {
   this->Show(this->BlackBoard, this->WhiteBoard);
@@ -242,7 +250,6 @@ bool Othello::TurnProcess(int player) {
 void Othello::EndProcess() {
   int blackScore = Othello::BitCount(this->BlackBoard);
   int whiteScore = Othello::BitCount(this->WhiteBoard);
-  this->Show();
   string win = whiteScore > blackScore ? "îí" : "çï";
   cout << (whiteScore == blackScore ? "à¯Ç´ï™ÇØ" : "win:" + win)
        << "    îí:" << whiteScore << " çï" << blackScore << endl;
