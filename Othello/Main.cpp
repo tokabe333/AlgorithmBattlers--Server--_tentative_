@@ -214,7 +214,6 @@ ull Monkey(ull cand) {
     }
     counta <<= 1;
   }
-  return counta;
 }
 
 int bitCount(ull player) {
@@ -277,8 +276,6 @@ int main() {
          << endl;
   }
   cout << "time : " << gameTime / 1000 << "ms" << endl;
-  int a;
-  cin >> a;
   // show(black, white);
   return 0;
 }
