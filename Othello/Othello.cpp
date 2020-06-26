@@ -272,13 +272,14 @@ int main() {
   Othello othello(Monkey, Monkey);
   cout << "ƒQ[ƒ€ŠJŽn" << endl;
 
-  int player = 1;
-  while (!othello.TurnProcess(player)) {
-    player *= -1;
+  for (int i = 0; i < 10; ++i) {
+    int player = 1;
+    while (!othello.TurnProcess(player)) {
+      player *= -1;
+    }
+    othello.Show();
+    othello.EndProcess();
   }
-  othello.Show();
-  othello.EndProcess();
 
-  cout << endl << "timet:" << timet << endl;
   return 0;
 }
