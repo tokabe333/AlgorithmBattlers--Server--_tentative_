@@ -1,5 +1,10 @@
 #include "Othello.h"
 
+Othello::Othello(ull (*whiteSolver)(ull), ull (*blackSolver)(ull)) {
+  this->WhiteSolver = whiteSolver;
+  this->BlackSolver = blackSolver;
+}
+
 void Othello::Show() {
   this->Show(this->BlackBoard, this->WhiteBoard);
 }  // End_Method
@@ -181,8 +186,8 @@ void Othello::PutStone(bool turn, ull point) {
   ull rev = up | down | left | right | rightup | rightdown | leftdown | leftup;
   player |= rev;
   opponent -= rev;
-  *black = player * turn + opponent * (!turn);
-  *white = opponent * (turn) + player * (!turn);
+  this->BlackBoard = player * turn + opponent * (!turn);
+  this->WhiteBoard = opponent * (turn) + player * (!turn);
 }  // End_Method
 
 int Othello::Count(ull t) {
@@ -194,6 +199,20 @@ int Othello::Count(ull t) {
   t = (t & 0x00000000FFFFFFFF) + ((t & 0xFFFFFFFF00000000) >> 32);
   return t;
 }  // End_Method
+
+ull Othello::BitCount(ull player) {
+  int size = 64;
+  ull mask = 0x8000000000000000;
+  int count = 0;
+
+  for (int i = 0; i < size; ++i) {
+    if ((mask & player) != 0) count += 1;
+    // cout << "count:" << count << "   mask:" << mask << "  player:" << player
+    // << "  and:" << (mask & player) << endl;
+    mask = mask >> 1;
+  }
+  return count;
+}
 
 bool Othello::TurnProcess(int player) {
   ull cand = 0;
@@ -226,9 +245,10 @@ void Othello::EndProcess() {
        << "    ”’:" << whiteScore << " •" << blackScore << endl;
 }  // End_Method
 
-random_device rd{};
+time_t timet = time(0);
+mt19937 randd(timet);
 ull Monkey(ull cand) {
-  int point = rd() % Othello::Count(cand);
+  int point = randd() % Othello::Count(cand);
   int index = 0;
   ull counta = 1;
   for (int i = 0; i < 64; ++i) {
@@ -246,8 +266,16 @@ ull Monkey(ull cand) {
 
 int main() {
   // Solver solve = Monkey;
-  cout << "fjkdlaf;" << endl;
-  Othello ot(Monkey, Monkey);
-  cout << "jfk;ad" << endl;
+  cout << "‚ñ‚²‚ñ‚²" << endl;
+  Othello othello(Monkey, Monkey);
+  cout << "ƒQ[ƒ€ŠJŽn" << endl;
+
+  int player = 1;
+  while (othello.TurnProcess(player)) {
+    player *= -1;
+  }
+  othello.Show();
+
+  cout << endl << "timet:" << timet << endl;
   return 0;
 }

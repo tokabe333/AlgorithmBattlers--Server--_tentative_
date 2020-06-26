@@ -200,8 +200,10 @@ int count(ull t) {
 }
 
 random_device rd{};
+time_t t = time(0);
+mt19937 randd(t);
 ull Monkey(ull cand) {
-  int point = rd() % count(cand);
+  int point = randd() % count(cand);
   int index = 0;
   ull counta = 1;
   for (int i = 0; i < 64; ++i) {

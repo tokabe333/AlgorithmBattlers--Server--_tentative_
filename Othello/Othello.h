@@ -1,7 +1,8 @@
 #include "../Util/Common.h"
 #include "../Util/IGameInterface.h"
 
-class Othello : public IGame {
+// class Othello : public IGame {
+class Othello {
  public:
   ull WhiteBoard;   // ”’‚Ì”Õ–Ê
   ull BlackBoard;   // •‚Ì”Õ–Ê
