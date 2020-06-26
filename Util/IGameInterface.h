@@ -7,5 +7,7 @@ class IGame {
 
   virtual void Show();
 
-  virtual void TurnProcess(int player);
+  virtual bool TurnProcess(int player);
+
+  virtual void EndProcess();
 };

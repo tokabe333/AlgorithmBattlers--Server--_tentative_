@@ -102,9 +102,9 @@ ull Othello::Candidate(bool turn) {
   return cand;
 }  // End_Method
 
-void Othello::PutStone(ull *black, ull *white, bool turn, ull point) {
-  ull player = *black * turn + *white * (!turn) + point;
-  ull opponent = *black * (!turn) + *white * turn;
+void Othello::PutStone(bool turn, ull point) {
+  ull player = this->BlackBoard * turn + this->WhiteBoard * (!turn) + point;
+  ull opponent = this->BlackBoard * (!turn) + this->WhiteBoard * turn;
 
   ull wall = 0x7e7e7e7e7e7e7e7e;
   ull o = opponent & wall;
@@ -195,13 +195,35 @@ int Othello::Count(ull t) {
   return t;
 }  // End_Method
 
-void Othello::TurnProcess(int player) {
+bool Othello::TurnProcess(int player) {
   ull cand = 0;
+  bool turn = player == 1;
   while (true) {
     if (!Othello::Count(cand)) {
-                        cand = this->Candidate(this->Blac
-    }
+      cand = this->Candidate(turn);
+      if (!Othello::Count(cand)) {
+        return true;
+      }
+    } else {
+      cand = this->Candidate(turn);
+      if (!Othello::Count(cand)) {
+        continue;
+      }
+    }  // End_IfElse
+
+    ull point = turn ? this->WhiteSolver(cand) : this->BlackSolver(cand);
+    this->PutStone(turn, point);
+    return false;
   }  // End_While
+}  // End_Method
+
+void Othello::EndProcess() {
+  int blackScore = Othello::BitCount(this->BlackBoard);
+  int whiteScore = Othello::BitCount(this->WhiteBoard);
+  this->Show();
+  string win = whiteScore > blackScore ? "”’" : "•";
+  cout << (whiteScore == blackScore ? "ˆø‚«•ª‚¯" : "win:" + win)
+       << "    ”’:" << whiteScore << " •" << blackScore << endl;
 }  // End_Method
 
 random_device rd{};

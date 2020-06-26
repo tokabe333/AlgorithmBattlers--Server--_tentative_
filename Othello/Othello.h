@@ -24,10 +24,13 @@ class Othello : public IGame {
   ull Candidate(bool turn);
 
   // 石を置く処理
-  void PutStone(ull* black, ull* white, bool turn, ull point);
+  void PutStone(bool turn, ull point);
 
-  // 各ターンの処理
-  void TurnProcess(int player);
+  // 各ターンの処理 false→まだ試合続行 true→試合終了
+  bool TurnProcess(int player);
+
+  // 終了処理
+  void EndProcess();
 
   // static:----------------------------------------
 
