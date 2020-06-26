@@ -1,3 +1,0 @@
-
-    othello.Show();
-    othello.EndP
