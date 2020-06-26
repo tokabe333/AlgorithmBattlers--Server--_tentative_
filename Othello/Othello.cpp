@@ -22,10 +22,10 @@ void Othello::Show(ull black, ull white) {
   // cout << endl;
 }  // End_Method
 
-ull Othello::Candidate(ull black, ull white, bool turn) {
+ull Othello::Candidate(bool turn) {
   ull cand = 0;
-  ull player = black * turn + white * (!turn);
-  ull opponent = black * (!turn) + white * turn;
+  ull player = this->BlackBoard * turn + this->WhiteBoard * (!turn);
+  ull opponent = this->BlackBoard * (!turn) + this->WhiteBoard * turn;
 
   ull wall = 0x7e7e7e7e7e7e7e7e;
   ull o = opponent & wall;
@@ -195,19 +195,18 @@ int Othello::Count(ull t) {
   return t;
 }  // End_Method
 
-int count(ull t) {
-  t = (t & 0x5555555555555555) + ((t & 0xAAAAAAAAAAAAAAAA) >> 1);
-  t = (t & 0x3333333333333333) + ((t & 0xCCCCCCCCCCCCCCCC) >> 2);
-  t = (t & 0x0F0F0F0F0F0F0F0F) + ((t & 0xF0F0F0F0F0F0F0F0) >> 4);
-  t = (t & 0x00FF00FF00FF00FF) + ((t & 0xFF00FF00FF00FF00) >> 8);
-  t = (t & 0x0000FFFF0000FFFF) + ((t & 0xFFFF0000FFFF0000) >> 16);
-  t = (t & 0x00000000FFFFFFFF) + ((t & 0xFFFFFFFF00000000) >> 32);
-  return t;
-}
+void Othello::TurnProcess(int player) {
+  ull cand = 0;
+  while (true) {
+    if (!Othello::Count(cand)) {
+                        cand = this->Candidate(this->Blac
+    }
+  }  // End_While
+}  // End_Method
 
 random_device rd{};
 ull Monkey(ull cand) {
-  int point = rd() % count(cand);
+  int point = rd() % Othello::Count(cand);
   int index = 0;
   ull counta = 1;
   for (int i = 0; i < 64; ++i) {
@@ -226,8 +225,7 @@ ull Monkey(ull cand) {
 int main() {
   // Solver solve = Monkey;
   cout << "fjkdlaf;" << endl;
-  Othello ot([](ull n) { return n * 334; });
+  Othello ot(Monkey, Monkey);
   cout << "jfk;ad" << endl;
-  cout << ot.WhiteSolver(334) << endl;
   return 0;
 }

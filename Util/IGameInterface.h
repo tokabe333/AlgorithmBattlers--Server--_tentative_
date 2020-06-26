@@ -6,4 +6,6 @@ class IGame {
   string* PlayerNames;
 
   virtual void Show();
+
+  virtual void TurnProcess(int player);
 };
