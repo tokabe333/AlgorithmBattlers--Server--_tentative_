@@ -256,6 +256,7 @@ int main() {
         }
       }
       ull point = Monkey(cand);
+      cout << "monkey:" << point << endl;
       putStone(&black, &white, turn, point);
       turn = !turn;
       // cout << "white:" << white << "   black:" << black << endl;

@@ -3,6 +3,9 @@
 Othello::Othello(ull (*whiteSolver)(ull), ull (*blackSolver)(ull)) {
   this->WhiteSolver = whiteSolver;
   this->BlackSolver = blackSolver;
+
+  this->BlackBoard = 0x0000000810000000;
+  this->WhiteBoard = 0x0000001008000000;
 }
 
 void Othello::Show() {
@@ -261,7 +264,6 @@ ull Monkey(ull cand) {
     }
     counta <<= 1;
   }
-  return 0;
 }
 
 int main() {
@@ -271,10 +273,11 @@ int main() {
   cout << "ƒQ[ƒ€ŠJŽn" << endl;
 
   int player = 1;
-  while (othello.TurnProcess(player)) {
+  while (!othello.TurnProcess(player)) {
     player *= -1;
   }
   othello.Show();
+  othello.EndProcess();
 
   cout << endl << "timet:" << timet << endl;
   return 0;
