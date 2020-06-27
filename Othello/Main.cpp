@@ -1,6 +1,7 @@
 #include "../Util/Common.h"
 
-
+time_t start_time = time(0);
+mt19937 random(time(0));
 
 int main() {
   // Solver solve = Monkey;
