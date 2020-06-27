@@ -1,3 +1,6 @@
+#ifndef INCLUDE_GUARD_OTHELLO
+#define INCLUDE_GUARD_OTHELLO
+
 #include "../Util/Common.h"
 #include "../Util/IGameInterface.h"
 
@@ -46,3 +49,5 @@ class Othello : public IGame {
   // êŒÇÃêîîªíË
   static ull BitCount(ull player);
 };
+
+#endif

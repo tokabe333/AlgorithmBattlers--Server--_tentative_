@@ -1,3 +1,6 @@
+#ifndef INCLUDE_GUARD_IGAMEINTERFACE
+#define INCLUDE_GUARD_IGAMEINTERFACE
+
 #include "common.h"
 
 class IGame {
@@ -11,3 +14,5 @@ class IGame {
 
   virtual void EndProcess();
 };
+
+#endif
