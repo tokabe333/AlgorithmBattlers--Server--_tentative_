@@ -43,7 +43,7 @@ class Othello : public IGame {
 
   // static:----------------------------------------
 
-  //
+  // —§‚Á‚Ä‚¢‚éƒrƒbƒg‚ğ”‚¦‚é
   static int count(ull t);
 
   // Î‚Ì””»’è

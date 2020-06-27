@@ -1,13 +1,13 @@
 #ifndef INCLUDE_GUARD_SOLVERS
 #define INCLUDE_GUARD_SOLVERS
+
 #include "../Util/Common.h"
 
-class MonkeySolver : SolverInterface {
- private:
+class MonkeySolver : public SolverInterface {
  public:
-  MonkeySolver() { randd(time(0)); }
+  MonkeySolver() {}
   void Solve(int* out_x, int* out_y, const BoardInfo* info);
   ull Solve(ull cand);
-}
+};
 
 #endif

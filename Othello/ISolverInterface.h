@@ -7,13 +7,14 @@ typedef struct _XY {
   int y;
   _XY(int xx, int yy) : x(xx), y(yy) {}
 } XY;
-typedef struct _BoardInfo {
+
+typedef struct {
   int** board_data;
   vector<XY> candidate;
 } BoardInfo;
 
 class SolverInterface {
-  virtual void Solve(int* out_x, int* out_y, const BoardInfo* info);
+  virtual void Solve(int* out_x, int* out_y, BoardInfo* info);
 };
 
 #endif
