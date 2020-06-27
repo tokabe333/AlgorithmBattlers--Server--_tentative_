@@ -1,22 +1,6 @@
-#include "Othello.h"
+#include "../Util/Common.h"
 
-time_t timet = time(0);
-mt19937 randd(timet);
-ull Monkey(ull cand) {
-  int point = randd() % Othello::count(cand);
-  int index = 0;
-  ull counta = 1;
-  for (int i = 0; i < 64; ++i) {
-    if (counta & cand) {
-      if (index == point) {
-        return counta;
-      } else {
-        index++;
-      }
-    }
-    counta <<= 1;
-  }
-}
+
 
 int main() {
   // Solver solve = Monkey;

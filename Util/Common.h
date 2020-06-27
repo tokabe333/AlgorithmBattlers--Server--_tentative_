@@ -1,5 +1,3 @@
-#ifndef INCLUDE_GUARD_COMMON
-#define INCLUDE_GUARD_COMMON
 
 #include <time.h>
 
@@ -11,7 +9,6 @@
 
 #include "../Othello/ISolverInterface.h"
 #include "../Othello/Othello.h"
+#include "../Othello/Solvers.h"
 typedef unsigned long long ull;
 using namespace std;
-
-#endif
