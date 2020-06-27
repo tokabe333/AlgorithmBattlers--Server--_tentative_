@@ -3,14 +3,14 @@
 #include "../Util/Common.h"
 
 typedef struct _XY {
-  int X;
-  int Y;
-  _XY(int x, int y) : X(x), Y(y) {}
+  int x;
+  int y;
+  _XY(int xx, int yy) : x(xx), y(yy) {}
 } XY, *PXY;
 
 class SolverInterface {
-  int** BoardData;
-  vector<XY> Candidate;
+  int** board_data;
+  vector<XY> candidate;
 
   virtual void Solve(int* out_x, int* out_y);
 };

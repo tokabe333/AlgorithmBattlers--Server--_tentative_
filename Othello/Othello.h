@@ -7,47 +7,47 @@
 // class Othello : public IGame {
 class Othello : public IGame {
  public:
-  ull WhiteBoard;     // 白の盤面
-  ull BlackBoard;     // 黒の盤面
-  int ElapsedTurn;    // 経過ターン
-  int** BoardData;    // 盤面情報(ソルバーに上げる)
-  int BoardSize = 8;  // 盤面サイズ(今の所8固定)
+  ull white_board;     // 白の盤面
+  ull black_board;     // 黒の盤面
+  int elapsed_turn;    // 経過ターン
+  int** board_data;    // 盤面情報(ソルバーに上げる)
+  int board_size = 8;  // 盤面サイズ(今の所8固定)
 
  private:
-  ull (*WhiteSolver)(ull);  // 白のソルバー
-  ull (*BlackSolver)(ull);  // 黒のソルバー
+  ull (*white_solver)(ull);  // 白のソルバー
+  ull (*black_sover)(ull);   // 黒のソルバー
 
-  void Show(ull black, ull white);
+  void show(ull black, ull white);
 
  public:
   // コンストラクタ，各プレイヤーのソルバーを渡して初期化
   Othello(ull (*whiteSolver)(ull), ull (*blackSolver)(ull));
 
   // @override 盤面表示くん
-  void Show();
+  void show();
 
   // 候補手表示
-  ull Candidate(bool turn);
+  ull candidate(bool turn);
 
   // 石を置く処理
   void PutStone(bool turn, ull point);
 
   // 各ターンの処理 false→まだ試合続行 true→試合終了
-  bool TurnProcess(int player);
+  bool turn_process(int player);
 
   // 終了処理
-  void EndProcess();
+  void end_process();
 
   // ソルバーに渡すデータを作る
-  void TranslateBitToArray();
+  void translate_bit2array();
 
   // static:----------------------------------------
 
   //
-  static int Count(ull t);
+  static int count(ull t);
 
   // 石の数判定
-  static ull BitCount(ull player);
+  static ull bit_count(ull player);
 };
 
 #endif

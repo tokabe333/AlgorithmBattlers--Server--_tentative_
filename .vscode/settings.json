@@ -5,6 +5,8 @@
 		"ostream": "cpp",
 		"random": "cpp",
 		"string": "cpp",
-		"iostream": "cpp"
+		"iostream": "cpp",
+		"xlocnum": "cpp",
+		"xstring": "cpp"
 	}
 }

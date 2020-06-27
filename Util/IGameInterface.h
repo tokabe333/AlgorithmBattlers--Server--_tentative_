@@ -5,14 +5,14 @@
 
 class IGame {
  public:
-  int* Scores;
-  string* PlayerNames;
+  int* scores;
+  string* player_names;
 
-  virtual void Show();
+  virtual void show();
 
-  virtual bool TurnProcess(int player);
+  virtual bool turn_process(int player);
 
-  virtual void EndProcess();
+  virtual void end_process();
 };
 
 #endif
